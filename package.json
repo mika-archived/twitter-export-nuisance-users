@@ -1,0 +1,27 @@
+{
+  "name": "twitter-export-nuisance-users",
+  "version": "1.0.0",
+  "description": "CLI Tool for exporting blocking / muting users from Twitter",
+  "main": "bin/index.js",
+  "repository": "https://github.com/mika-sandbox/twitter-export-nuisance-users.git",
+  "author": "Natsuneko <10832834+mika-f@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ora": "^6.0.1",
+    "prompts": "^2.4.2",
+    "twitter-api-v2": "^1.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-base-typescript": "^1.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.2.4",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
+}

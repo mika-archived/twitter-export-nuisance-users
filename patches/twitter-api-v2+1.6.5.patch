@@ -1,0 +1,27 @@
+diff --git a/node_modules/twitter-api-v2/dist/v2/client.v2.read.d.ts b/node_modules/twitter-api-v2/dist/v2/client.v2.read.d.ts
+index 409b200..2577cbd 100644
+--- a/node_modules/twitter-api-v2/dist/v2/client.v2.read.d.ts
++++ b/node_modules/twitter-api-v2/dist/v2/client.v2.read.d.ts
+@@ -131,7 +131,7 @@ export default class TwitterApiv2ReadOnly extends TwitterApiSubClient {
+      * Returns a list of users who are muted by the authenticating user.
+      * https://developer.twitter.com/en/docs/twitter-api/users/mutes/api-reference/get-users-muting
+      */
+-    userMutingUsers(options?: Partial<UserV2TimelineParams>): Promise<UserMutingUsersV2Paginator>;
++    userMutingUsers(userId: string, options?: Partial<UserV2TimelineParams>): Promise<UserMutingUsersV2Paginator>;
+     /**
+      * Get a single space by ID.
+      * https://developer.twitter.com/en/docs/twitter-api/spaces/lookup/api-reference/get-spaces-id
+diff --git a/node_modules/twitter-api-v2/dist/v2/client.v2.read.js b/node_modules/twitter-api-v2/dist/v2/client.v2.read.js
+index eebb1b5..b844cb6 100644
+--- a/node_modules/twitter-api-v2/dist/v2/client.v2.read.js
++++ b/node_modules/twitter-api-v2/dist/v2/client.v2.read.js
+@@ -244,8 +244,7 @@ class TwitterApiv2ReadOnly extends client_subclient_1.default {
+      * Returns a list of users who are muted by the authenticating user.
+      * https://developer.twitter.com/en/docs/twitter-api/users/mutes/api-reference/get-users-muting
+      */
+-    async userMutingUsers(options = {}) {
+-        const { id_str: userId } = await this.getCurrentUserObject();
++    async userMutingUsers(userId, options = {}) {
+         const params = { id: userId };
+         const initialRq = await this.get('users/:id/muting', options, { fullResponse: true, params });
+         return new user_paginator_v2_1.UserMutingUsersV2Paginator({
